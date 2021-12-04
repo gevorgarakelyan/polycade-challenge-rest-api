@@ -1,16 +1,16 @@
 const setPm = (machineId, pmId, data) => {
 	// to do, create the Sequilize requests and return the necessary data
-	return '/:machine-id/prices/:pm-id' + machineId + ':' + pmId + JSON.stringify(data)
+	return '/' + machineId + '/prices/' + pmId + ' ' + JSON.stringify(data)
 }
 
 const deletePm = (machineId, pmId) => {
 	// to do, create the Sequilize requests and return the necessary data
-	return '/:machine-id/prices/:pm-id' + machineId + ':' + pmId
+	return '/' + machineId + '/prices/'+ pmId
 }
 
 const getPm = (machineId) => {
 	// to do, create the Sequilize requests and return the necessary data
-	return '/:machine-id/prices' + machineId
+	return '/' + machineId + '/prices'
 }
 
 module.exports = {

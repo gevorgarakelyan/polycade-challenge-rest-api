@@ -4,15 +4,14 @@ import bodyParser from 'koa-bodyparser'
 const app = new Koa()
 const PORT = process.env.PORT || 1337
 
-const machineRoutes = ('./routes/machine.routes')
-const pricingModelRoutes = ('./routes/pricingModel.routes')
+const machineRoutes = require('./routes/machine.routes')
+const pricingModelRoutes = require('./routes/pricingModel.routes')
 
-const db = require("./app/models")
-db.sequelize.sync()
-
-app.use(bodyParser())
+// const db = require("./models")
+// db.sequelize.sync()
 
 app
+  .use(bodyParser())
   .use(machineRoutes.routes())
   .use(pricingModelRoutes.routes())
   .listen(PORT, () =>
